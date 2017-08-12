@@ -9,11 +9,9 @@ import java.util.Map;
 @RestController
 public class LogginController {
 
-    @RequestMapping({ "/user", "/me" })
-    public Map<String, String> user(Principal principal) {
-        Map<String, String> map = new LinkedHashMap<>();
-        map.put("name", principal.getName());
-        return map;
+    @RequestMapping("/user")
+    public Principal user(Principal principal) {
+        return principal;
     }
 }
 

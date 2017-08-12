@@ -9,4 +9,8 @@ security:
       authenticationScheme: query
       clientAuthenticationScheme: form
     resource:
-      userInfoUri: https://graph.facebook.com/mera
+      userInfoUri: https://graph.facebook.com/me
+
+logging:
+  level:
+    org.springframework.security: DEBUG

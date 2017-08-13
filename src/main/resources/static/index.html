@@ -39,8 +39,16 @@
             }).controller("home", function($http, $location) {
         var self = this;
         $http.get("/user").success(function(data) {
-            self.user = data.userAuthentication.details.name;
-            self.authenticated = true;
+            if (data.userAuthentication.details.login != null){
+                self.user = data.userAuthentication.details.login;
+                self.authenticated = true;
+            }else {
+                self.user = data.userAuthentication.details.name;
+                self.authenticated = true;
+            }
+            //self.user = data.userAuthentication.details.login;
+            //self.user = data.userAuthentication.details.name;
+            //self.authenticated = true;
         }).error(function() {
             self.user = "N/A";
             self.authenticated = false;

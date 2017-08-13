@@ -22,3 +22,17 @@ github:
 logging:
   level:
     org.springframework.security: DEBUG
+
+#Connection to h2 database
+
+spring:
+  jpa:
+    database: H2
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:h2:~/file/TestingDataBase;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+
